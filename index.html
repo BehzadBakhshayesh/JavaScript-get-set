@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const obj = {
+        b: 1,
+        get a() {
+          return this.b;
+        },
+        set a(value) {
+          if (value > 5) {
+            this.b = value;
+          } else {
+            this.b = 6;
+          }
+        },
+      };
+      obj.a = 2; // => set
+      console.log("1", obj.a); // => get
+      obj.a = 3;
+      console.log("2", obj.a);
+      obj.a = 5;
+      console.log("3", obj.a);
+      obj.a = 8;
+      console.log("4", obj.a);
+      obj.a = 15;
+      console.log("5", obj.a);
+    </script>
+  </body>
+</html>
